@@ -37,3 +37,68 @@ const MyComponent = (props) => (
 ##
 
 Let's see an example (example1).
+
+# Single Page Applications
+
+##
+
+A SPA is an application that re-renders the HTML code dynamically in
+the client side instead of letting the server render it.
+
+##
+
+They made snappier applications because we don't need to always wait
+for the server to re-render HTML for each new page.
+
+## How do they render different components?
+
+##
+
+With client side routing!
+
+# React router
+
+##
+
+React router is a community project (not created by the React team @
+FB) that integrates very nicely with React.
+
+##
+
+It has three main components
+
+- The `Router`
+- `Routes`
+- `Links`
+
+# Router
+
+##
+
+We need to wrap the components that will use routing in the `BrowserRouter`.
+
+```
+ReactDOM.render(
+  <BrowserRouter><MyComponent /></BrowserRouter>,
+  document.getElementById('root'));
+```
+
+This will allow us to use routing inside this component
+
+# Routes 
+
+`<Route path="/about-us" component={MyComponent}/>`
+
+##
+
+Routes make it possible to handle different URLs.  The component
+passed as `component` to the route will get rendered whenever the
+`path` is matched.
+
+## exact
+
+There will be times in which more than one route matches a URL.  See example2.
+
+## exact
+
+`exact` will help us rendering certain components when the URL match is **EXACT**.
