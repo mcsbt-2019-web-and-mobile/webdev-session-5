@@ -16,7 +16,6 @@ const Home = (props) => (
 const App = () => (
   <div>
     <Route exact path="/" component={Home}/>
-    <Route path="/user/:username" component={User}/>
   </div>
 );
 
