@@ -93,9 +93,11 @@ This will allow us to use routing inside this component
 
 ##
 
-Routes make it possible to handle different URLs.  The component
-passed as `component` to the route will get rendered whenever the
-`path` is matched.
+Routes make it possible to handle different URLs. They have two main props:
+
+- `path`: the URL this route will match
+- `component`: The component to be rendered when the path matches
+
 
 ## exact
 
@@ -105,9 +107,46 @@ There will be times in which more than one route matches a URL.  See example2.
 
 `exact` will help us rendering certain components when the URL match is **EXACT**.
 
-## exercise
+## exercise1
 
 do exercise1
+
+## matching dynamic paths
+
+At some point we may want to extract some data from a path.  Think of
+URLs like:
+
+- `users/pepegar`
+- `clients/5133525`
+
+In these cases we can capture some variable from the path and pass it
+to the rendered component.
+
+## matching dynamic paths
+
+We do so as follows:
+
+```javascript
+<Route path="/clients/:clientId" component={Client} />
+```
+
+## matching dynamic paths
+
+The match data from the route is passed as a prop to the rendered
+component.
+
+Whe can use the actual value from the path in the target component as
+follows:
+
+```javascript
+const Client = (props) => (
+  <div>rendering client: {props.match.params.clientId}</div>
+);
+```
+
+## exercise2
+
+do exercise2
 
 # Links
 
