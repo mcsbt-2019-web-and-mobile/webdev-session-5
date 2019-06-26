@@ -150,4 +150,21 @@ do exercise2
 
 # Links
 
+##
 
+we use `<Link />` to add a link to other parts of our application.
+
+
+##
+
+There's only one important `prop` in the `<Link` component, `to`:
+
+```javascript
+<Link to="/users/pepegar" />
+```
+
+Mind the leading slash in the path.
+
+## exercise3
+
+do exercise3

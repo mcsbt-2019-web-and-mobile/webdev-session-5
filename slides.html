@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Pepe García">
+  <title>session 5</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">session 5</h1>
+  <p class="subtitle"><em>More react!</em></p>
+  <p class="author">Pepe García</p>
+</section>
+
+<section id="plan-for-today" class="title-slide slide level1"><h1>plan for today</h1><ul>
+<li>function components</li>
+<li>react-router</li>
+</ul></section>
+<section><section id="function-components" class="title-slide slide level1"><h1>function components</h1></section><section id="section" class="slide level2">
+<h2></h2>
+<p>The last day in class we created all our components by creating classes like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> MyComponent <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> <span class="op">&lt;</span>li<span class="op">&gt;</span><span class="kw">this</span> is my component&lt;/li<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="op">}</span></a></code></pre></div>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<p>However, React provides an easier way for rendering components when we don’t need them to handle special state. These kind of components is called function components:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> MyComponent <span class="op">=</span> (props) <span class="kw">=&gt;</span> (</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="op">&lt;</span>li<span class="op">&gt;</span><span class="kw">this</span> is my component&lt;/li<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">)<span class="op">;</span></a></code></pre></div>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<p>Let’s see an example (example1).</p>
+</section></section>
+<section><section id="single-page-applications" class="title-slide slide level1"><h1>Single Page Applications</h1></section><section id="section-3" class="slide level2">
+<h2></h2>
+<p>A SPA is an application that re-renders the HTML code dynamically in the client side instead of letting the server render it.</p>
+</section><section id="section-4" class="slide level2">
+<h2></h2>
+<p>They made snappier applications because we don’t need to always wait for the server to re-render HTML for each new page.</p>
+</section><section id="how-do-they-render-different-components" class="slide level2">
+<h2>How do they render different components?</h2>
+</section><section id="section-5" class="slide level2">
+<h2></h2>
+<p>With client side routing!</p>
+</section></section>
+<section><section id="react-router" class="title-slide slide level1"><h1>React router</h1></section><section id="section-6" class="slide level2">
+<h2></h2>
+<p>React router is a community project (not created by the React team @ FB) that integrates very nicely with React.</p>
+</section><section id="section-7" class="slide level2">
+<h2></h2>
+<p>It has three main components</p>
+<ul>
+<li>The <code>Router</code></li>
+<li><code>Routes</code></li>
+<li><code>Links</code></li>
+</ul>
+</section></section>
+<section><section id="router" class="title-slide slide level1"><h1>Router</h1></section><section id="section-8" class="slide level2">
+<h2></h2>
+<p>We need to wrap the components that will use routing in the <code>BrowserRouter</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">ReactDOM</span>.<span class="at">render</span>(</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="op">&lt;</span>BrowserRouter<span class="op">&gt;&lt;</span>MyComponent /<span class="op">&gt;</span>&lt;/BrowserRouter<span class="op">&gt;,</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;root&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<p>This will allow us to use routing inside this component</p>
+</section></section>
+<section><section id="routes" class="title-slide slide level1"><h1>Routes</h1><p><code>&lt;Route path="/about-us" component={MyComponent}/&gt;</code></p></section><section id="section-9" class="slide level2">
+<h2></h2>
+<p>Routes make it possible to handle different URLs. They have two main props:</p>
+<ul>
+<li><code>path</code>: the URL this route will match</li>
+<li><code>component</code>: The component to be rendered when the path matches</li>
+</ul>
+</section><section id="exact" class="slide level2">
+<h2>exact</h2>
+<p>There will be times in which more than one route matches a URL. See example2.</p>
+</section><section id="exact-1" class="slide level2">
+<h2>exact</h2>
+<p><code>exact</code> will help us rendering certain components when the URL match is <strong>EXACT</strong>.</p>
+</section><section id="exercise1" class="slide level2">
+<h2>exercise1</h2>
+<p>do exercise1</p>
+</section><section id="matching-dynamic-paths" class="slide level2">
+<h2>matching dynamic paths</h2>
+<p>At some point we may want to extract some data from a path. Think of URLs like:</p>
+<ul>
+<li><code>users/pepegar</code></li>
+<li><code>clients/5133525</code></li>
+</ul>
+<p>In these cases we can capture some variable from the path and pass it to the rendered component.</p>
+</section><section id="matching-dynamic-paths-1" class="slide level2">
+<h2>matching dynamic paths</h2>
+<p>We do so as follows:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/clients/:clientId&quot;</span> component<span class="op">={</span>Client<span class="op">}</span> /&gt;</a></code></pre></div>
+</section><section id="matching-dynamic-paths-2" class="slide level2">
+<h2>matching dynamic paths</h2>
+<p>The match data from the route is passed as a prop to the rendered component.</p>
+<p>Whe can use the actual value from the path in the target component as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">const</span> Client <span class="op">=</span> (props) <span class="kw">=&gt;</span> (</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="op">&lt;</span>div<span class="op">&gt;</span>rendering client<span class="op">:</span> <span class="op">{</span><span class="va">props</span>.<span class="va">match</span>.<span class="va">params</span>.<span class="at">clientId</span><span class="op">}</span>&lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">)<span class="op">;</span></a></code></pre></div>
+</section><section id="exercise2" class="slide level2">
+<h2>exercise2</h2>
+<p>do exercise2</p>
+</section></section>
+<section><section id="links" class="title-slide slide level1"><h1>Links</h1></section><section id="section-10" class="slide level2">
+<h2></h2>
+<p>we use <code>&lt;Link /&gt;</code> to add a link to other parts of our application.</p>
+</section><section id="section-11" class="slide level2">
+<h2></h2>
+<p>There’s only one important <code>prop</code> in the <code>&lt;Link</code> component, <code>to</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="op">&lt;</span>Link to<span class="op">=</span><span class="st">&quot;/users/pepegar&quot;</span> /&gt;</a></code></pre></div>
+<p>Mind the leading slash in the path.</p>
+</section><section id="exercise3" class="slide level2">
+<h2>exercise3</h2>
+<p>do exercise3</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/lib/js/head.min.js"></script>
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
