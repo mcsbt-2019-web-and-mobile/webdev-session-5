@@ -18,11 +18,8 @@ const Store = () => (
 
 const App = () => (
   <div id="base">
-    <Route exact path="/" component={Home}/>
-    <Route exact path="/about" component={About}/>
-    <Route exact path="/store" component={Store}/>    
   </div>
 );
 
 
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

@@ -18,7 +18,9 @@ classes like this:
 
 ```javascript
 class MyComponent extends React.Component {
-  // all the fun stuff
+  render() {
+    return <li>this is my component</li>;
+  }
 }
 ```
 
@@ -77,7 +79,7 @@ It has three main components
 
 We need to wrap the components that will use routing in the `BrowserRouter`.
 
-```
+```javascript
 ReactDOM.render(
   <BrowserRouter><MyComponent /></BrowserRouter>,
   document.getElementById('root'));
@@ -102,3 +104,11 @@ There will be times in which more than one route matches a URL.  See example2.
 ## exact
 
 `exact` will help us rendering certain components when the URL match is **EXACT**.
+
+## exercise
+
+do exercise1
+
+# Links
+
+
